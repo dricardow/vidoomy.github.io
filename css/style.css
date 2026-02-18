@@ -1,0 +1,504 @@
+.element-click-to-play {
+    background-color: #000000;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homura-plus-car-element {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 60vw;
+    object-fit: contain;
+    height: auto;
+    max-height: 53.89vh;
+    opacity: 0;
+    animation: carSlideIn 1.2s ease-out 0.4s forwards;
+    z-index: 10;
+}
+
+.element-click-to-play .background_without_car {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+    z-index: 0;
+}
+
+
+.element-click-to-play .rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(24, 24, 24, 0.95) 0%,
+            rgba(0, 2, 3, 0) 30%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.element-click-to-play .div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.element-click-to-play .logo {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    width: clamp(80px, 7.65vw, 147px);
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.element-click-to-play .logo:hover {
+    transform: scale(1.05);
+}
+
+.principal-banner {
+    position: absolute;
+    top: 54px;
+    left: 54px;
+    width: 54vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
+    padding-left: 0;
+    z-index: 11;
+}
+
+.text-wrapper {
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 7.8rem;
+    line-height: 0.95;
+    letter-spacing: 0.015em;
+    margin: 0;
+    opacity: 0;
+    animation: slideInLeft 1s ease-out 0.8s forwards;
+    z-index: 11;
+}
+
+.modalities {
+    font-family: var(--site-font);
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 4.35rem;
+    line-height: 1.14;
+    margin: 0;
+    opacity: 0;
+    letter-spacing: 0.014em;
+    animation: slideInLeft 1s ease-out 1.2s forwards;
+    z-index: 11;
+}
+
+.cta {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45vw;
+  z-index: 12;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+}
+
+.cta__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  animation: buttonSlideIn 1s ease-out 1.6s forwards;
+}
+
+.cta__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  gap: 3rem;
+  padding: 2.5rem 0.5rem 1rem 16rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 2.2s forwards;
+}
+
+/* Texto "CLICK TO PLAY" */
+.cta__label {  
+  font-family: var(--site-font);
+  font-weight: 200;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: #000000;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Ícono del altavoz */
+.cta__speaker {
+  width: 3.3rem;
+  height: 3.3rem;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.banner_for_insurance_section {
+    position: absolute;
+    bottom: 33px;
+    left: 52px;
+    width: 42.5vw;
+    max-width: 690px;
+    min-width: 590px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+    z-index: 13;
+    opacity: 0;
+    animation: slideInLeft 1.2s ease-out 1.3s forwards;
+}
+
+.banner_for_insurance_img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.element-click-to-play .banner_for_insurance:hover {
+    transform: translateY(-5px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 48px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 1001;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+    color: #cc0000;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes carSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(90%, -80%) translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-20%, -40%) translateX(0);
+    }
+}
+
+@keyframes buttonSlideIn {
+    from {
+            transform: translate(0, 0) translateX(45vw);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .element-click-to-play .homura-plus-car-element {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .element-click-to-play .rectangle {
+        width: 100%;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 70%);
+    }
+
+    .element-click-to-play .homura-plus-car-element {
+        width: 80vw;
+        top: 55%;
+    }
+
+    .element-click-to-play .call_to_action {
+        bottom: 3rem;
+        right: 50%;
+        transform: translateX(50%);
+        width: clamp(280px, 60vw, 500px);
+    }
+
+    .element-click-to-play .call_to_action:hover {
+        transform: translateX(50%) scale(1.05);
+    }
+
+    .element-click-to-play .banner_for_insurance {
+        width: 60vw;
+        bottom: 12rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .element-click-to-play {
+        min-height: 100vh;
+    }
+
+    .element-click-to-play .rectangle {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+        width: 100%;
+        height: 100%;
+    }
+
+    .element-click-to-play .div {
+        height: 50%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .element-click-to-play .homura-plus-car-element {
+        width: 90vw;
+        top: 45%;
+    }
+
+    .element-click-to-play .logo {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: clamp(60px, 15vw, 100px);
+    }
+
+    .element-click-to-play .text-wrapper {
+        top: 2rem;
+        left: 1.5rem;
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+    .element-click-to-play .modalities {
+        top: clamp(6rem, 15vh, 8rem);
+        left: 1.5rem;
+        font-size: clamp(1.2rem, 5vw, 2.5rem);
+    }
+
+    .element-click-to-play .call_to_action {
+        bottom: 2rem;
+        right: 50%;
+        transform: translateX(50%);
+        width: clamp(250px, 70vw, 400px);
+    }
+
+    .element-click-to-play .call_to_action:hover {
+        transform: translateX(50%) scale(1.05);
+    }
+
+    .element-click-to-play .text-wrapper-2 {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+
+    .element-click-to-play .speaker {
+        width: clamp(25px, 6vw, 40px);
+        height: clamp(25px, 6vw, 40px);
+    }
+
+    .element-click-to-play .banner_for_insurance {
+        width: 70vw;
+        bottom: 8rem;
+        left: 1.5rem;
+    }
+
+    .modal-close {
+        top: -40px;
+        font-size: 36px;
+    }
+
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .element-click-to-play .text-wrapper {
+        font-size: clamp(1.5rem, 9vw, 3rem);
+    }
+
+    .element-click-to-play .modalities {
+        font-size: clamp(1rem, 4.5vw, 1.8rem);
+    }
+}
+
+.element-click-to-play .call_to_action {
+    width: 85vw;
+}
+
+.element-click-to-play .banner_for_insurance {
+    width: 80vw;
+    bottom: 7rem;
+}
+
+/* Focus states for accessibility */
+.call_to_action:focus-visible,
+.banner_for_insurance:focus-visible {
+    outline: 3px solid #cc0000;
+    outline-offset: 4px;
+}
+
+.modal-close:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
